@@ -1,0 +1,18 @@
+// bumul.jas
+//
+//  Author
+//    GORSHKOV SERGEY
+//
+//  Description
+//  	Mul top of the stack to a constant.
+//
+//
+.main				// start of program
+.var				// local variables for main program
+a
+.end-var
+
+start:
+	BIPUSH 0x03		// initialize var a 
+	BUMUL  0x03
+.end-main

@@ -1,0 +1,15 @@
+// maxab.jas
+//
+//  Author
+//    DOTS EKATERINA
+//
+//  Description
+//    
+//
+
+.main				// start of program
+start:	
+	BIPUSH 0x1
+	BIPUSH 0x9
+	IMAX_AB
+.end-main

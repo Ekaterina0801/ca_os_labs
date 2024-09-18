@@ -1,0 +1,16 @@
+// and3-light.jas
+//
+//  Author
+//    DOTS EKATERINA
+//
+//  Description
+//    
+//
+
+.main				// start of program
+start:	
+	BIPUSH 0x1
+	BIPUSH 0x9
+	BIPUSH 0x3
+	IAND3
+.end-main

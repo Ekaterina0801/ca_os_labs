@@ -1,0 +1,86 @@
+Доц Екатерина
+3.10
+
+1. Определите Ваши права на Ваш домашний каталог. Создайте файл `digits.txt`, запишите в него все десятичные цифры, выведите содержимое на консоль (echo, cat). 
+Создайте новый файл и поместите в него содержимое файла`digits.txt` 15 раз с помощью цикла.
+
+ekaterinaaleksandrovna@MacBook-Pro work % echo 0 1 2 3 4 5 6 7 8 9 > digits.txt
+ekaterinaaleksandrovna@MacBook-Pro work % cat digits.txt
+0 1 2 3 4 5 6 7 8 9
+ekaterinaaleksandrovna@MacBook-Pro work % for i in {1..15}; do   cat digits.txt  >> newdigits.txt ; done
+ekaterinaaleksandrovna@MacBook-Pro work % cat newdigits.txt
+0 1 2 3 4 5 6 7 8 9
+0 1 2 3 4 5 6 7 8 9
+0 1 2 3 4 5 6 7 8 9
+0 1 2 3 4 5 6 7 8 9
+0 1 2 3 4 5 6 7 8 9
+0 1 2 3 4 5 6 7 8 9
+0 1 2 3 4 5 6 7 8 9
+0 1 2 3 4 5 6 7 8 9
+0 1 2 3 4 5 6 7 8 9
+0 1 2 3 4 5 6 7 8 9
+0 1 2 3 4 5 6 7 8 9
+0 1 2 3 4 5 6 7 8 9
+0 1 2 3 4 5 6 7 8 9
+0 1 2 3 4 5 6 7 8 9
+0 1 2 3 4 5 6 7 8 9
+
+2. Для файла `digits.txt` удалите права доступа на чтение и запись у владельца и добавьте всем права на исполнение.
+ekaterinaaleksandrovna@MacBook-Pro work % chmod u-r,u-w,a+x digits.txt
+---xr-xr-x  1 ekaterinaaleksandrovna  staff     0  3 ноя 16:08 digits.txt
+
+3. Сохраните в текстовом файле имена всех файлов каталога /etc, которые начинаются на букву “a” (ls, grep)
+ekaterinaaleksandrovna@MacBook-Pro work % ls /etc | grep "^a" >> names.txt
+ekaterinaaleksandrovna@MacBook-Pro work % cat names.txt                   
+afpovertcp.cfg
+aliases
+aliases.db
+apache2
+asl
+asl.conf
+auto_home
+auto_master
+autofs.conf
+
+4. Определите, сколько файлов в системе принадлежит текущему пользователю (find, wc).
+ekaterinaaleksandrovna@MacBook-Pro work % find /Users/ekaterinaaleksandrovna |wc -l
+
+find: /Users/ekaterinaaleksandrovna/Pictures/Photos Library.photoslibrary: Operation not permitted
+find: /Users/ekaterinaaleksandrovna/Library/Application Support/MobileSync: Operation not permitted
+.......
+find: /Users/ekaterinaaleksandrovna/Library/Caches/com.apple.ap.adprivacyd: Operation not permitted
+find: /Users/ekaterinaaleksandrovna/.Trash: Operation not permitted
+ 1415662
+
+ 5. Запишите в файл с именем 'test.txt' первые 10 строк файла '.bashrc'. Переименуйте файл с именем 'test.txt' в файл '.bashrc_old'.  
+ekaterinaaleksandrovna@MacBook-Pro ~ % head .bashrc >> test.txt 
+ekaterinaaleksandrovna@MacBook-Pro ~ % mv test.txt .bashrc_old
+ekaterinaaleksandrovna@MacBook-Pro ~ % cat .bashrc_old
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+
+6. Сохраните в текстовом файле календарь 2х месяцев до текущего месяца и 3х после. 
+
+ekaterinaaleksandrovna@MacBook-Pro ~ % cal -A3 -B2 > calendar.txt
+ekaterinaaleksandrovna@MacBook-Pro ~ % cat calendar.txt
+   Сентябрь 2022          Октябрь 2022          Ноябрь 2022       
+вс пн вт ср чт пт сб  вс пн вт ср чт пт сб  вс пн вт ср чт пт сб  
+             1  2  3                     1         1  2  3  4  5  
+ 4  5  6  7  8  9 10   2  3  4  5  6  7  8   6  7  8  9 10 11 12  
+11 12 13 14 15 16 17   9 10 11 12 13 14 15  13 14 15 16 17 18 19  
+18 19 20 21 22 23 24  16 17 18 19 20 21 22  20 21 22 23 24 25 26  
+25 26 27 28 29 30     23 24 25 26 27 28 29  27 28 29 30           
+                      30 31                                       
+
+    Декабрь 2022          Январь 2023           Февраль 2023      
+вс пн вт ср чт пт сб  вс пн вт ср чт пт сб  вс пн вт ср чт пт сб  
+             1  2  3   1  2  3  4  5  6  7            1  2  3  4  
+ 4  5  6  7  8  9 10   8  9 10 11 12 13 14   5  6  7  8  9 10 11  
+11 12 13 14 15 16 17  15 16 17 18 19 20 21  12 13 14 15 16 17 18  
+18 19 20 21 22 23 24  22 23 24 25 26 27 28  19 20 21 22 23 24 25  
+25 26 27 28 29 30 31  29 30 31              26 27 28              
+                                                       

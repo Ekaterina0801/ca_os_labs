@@ -1,0 +1,21 @@
+// idec.jas
+//
+//  Author
+//    MMCS SFEDU
+//
+//  Description
+//  	Sub a constant from a local variable.
+//
+//
+.main				// start of program
+.var				// local variables for main program
+a
+.end-var
+
+start:
+	BIPUSH 0x05		// initialize var a 
+	ISTORE a	
+	IDEC  a 0x01
+.end-main
+
+
